@@ -32,12 +32,17 @@ function do_link {
 	fi
 	return 0
 }
+function do_link_all {
+	for f in $(ls "$1"); do
+		do_link "$1/$f" "$2/$f"
+	done
+}
 
 do_link "$DIR/.profile" "~/.profile"
 do_link "$DIR/xmonad.hs" "~/.xmonad/xmonad.hs"
 do_link "$DIR/tianbar" "~/.config/tianbar"
-do_link "$DIR/scripts/"* "~/bin"
-do_link "$DIR/xinit.d/"* "~/xinit.d"
+do_link_all "$DIR/scripts" "~/bin"
+do_link_all "$DIR/xinit.d" "~/xinit.d"
 
 do_link "/opt/Sublime Text 2/sublime_text" "~/bin"
 do_link "/opt/google/chrome/chrome" "~/bin"
