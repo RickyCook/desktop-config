@@ -1,0 +1,141 @@
+html {
+    margin: 0;
+    overflow: hidden;
+}
+
+body {
+    margin: 4px;
+    font-family: "Source Sans Pro ExtraLight";
+    color: white;
+    font-size: 13px;
+    background-repeat: no-repeat;
+    background-position: 0px 0px;
+    /*text-shadow: 0 0 10px orange, 0 0 10px orange, 0 0 10px orange;*/
+    cursor: default;
+}
+
+.workspaces, .layout, .title {
+    margin: 0px 2px 0px 0px;
+}
+
+.workspace4::after {
+    /*font-family: FontAwesome;*/
+    content: "\f126";
+    font-size: xx-small;
+    vertical-align: super;
+}
+
+.workspace6::after {
+    /*font-family: FontAwesome;*/
+    content: "\f003";
+    font-size: xx-small;
+    vertical-align: super;
+}
+
+.workspace7::after {
+    /*font-family: FontAwesome;*/
+    content: "\f0e5";
+    vertical-align: super;
+    font-size: xx-small;
+}
+
+.layout {
+    padding: 21px 2px;
+    margin: -22px inherit;
+    font-size: 12px;
+    border: 2px solid #3ECAE8;
+    border-radius: 40px;
+    width: 50px;
+    display: inline-block;
+    text-align: center;
+}
+
+.title {
+    margin-left: 4px;
+    font-weight: bold;
+    font-family: "Source Code Pro Black";
+    width: 1200px;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.subscript {
+    font-size: 10px;
+    vertical-align: sub;
+}
+
+.empty {
+    /*color: #999;*/
+}
+
+.urgent, .current, .visible {
+    padding: 1px 2px;
+    border-radius: 4px;
+    color: black;
+}
+
+@keyframes urgent {
+    0%, 100% {
+        color: white;
+        text-shadow:
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8,
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8,
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8,
+            0 0 20px #3ECAE8, 0 0 20px #3ECAE8, 0 0 20px #3ECAE8,
+            0 0 20px #3ECAE8, 0 0 20px #3ECAE8, 0 0 20px #3ECAE8;
+        color: white;
+    }
+}
+
+@-webkit-keyframes urgent {
+    0%, 100% {
+        color: white;
+        text-shadow:
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8,
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8;
+    }
+    50% {
+        text-shadow:
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8,
+            0 0 10px #3ECAE8, 0 0 10px #3ECAE8, 0 0 10px #3ECAE8,
+            0 0 20px #3ECAE8, 0 0 20px #3ECAE8, 0 0 20px #3ECAE8,
+            0 0 20px #3ECAE8, 0 0 20px #3ECAE8, 0 0 20px #3ECAE8;
+        color: white;
+    }
+}
+
+.urgent {
+    animation-name: urgent;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    -webkit-animation-name: urgent;
+    -webkit-animation-duration: 1s;
+    -webkit-animation-iteration-count: infinite;
+}
+
+.current {
+    background-color: #3ECAE8;
+}
+
+.visible {
+    background-color: #f0f0f0;
+}
+
+.widget-xmonad {
+    display: inline;
+}
+
+.widget-right {
+    float: right;
+    margin-left: 15px;
+}
+
+.time-hour {
+    color: #3ECAE8;
+}
