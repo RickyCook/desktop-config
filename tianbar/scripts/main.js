@@ -1,6 +1,6 @@
 require.config({
   paths: {
-    "jquery": "../components/jquery/jquery.min"
+    "jquery": "../bower_components/jquery/jquery.min"
   }
 });
 require(
