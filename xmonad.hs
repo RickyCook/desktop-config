@@ -64,7 +64,7 @@ modMask' :: KeyMask
 modMask' = mod4Mask
 
 -- Define workspaces
-myWorkspaces = ["1:code","2:web","3:mail","4:chat","5:media"]
+myWorkspaces = ["1:code","2:terminal","3:web","4:mail","5:chat","6:media"]
 
 -- Directories
 myHomeDir     = "/home/ricky/"
@@ -140,10 +140,10 @@ manageHook' :: ManageHook
 manageHook' = (composeAll . concat $
     [ [resource     =? r            --> doIgnore            |   r   <- myIgnores] -- ignore desktop
     , [className    =? c            --> doShift  "1:code"   |   c   <- myCode   ] -- move code to main
-    , [className    =? c            --> doShift  "2:web"    |   c   <- myWeb    ] -- move web to main
-    , [className    =? c            --> doShift  "3:mail"   |   c   <- myMail   ] -- move mail to main
-    , [className    =? c            --> doShift	 "4:chat"   |   c   <- myChat   ] -- move chat to chat
-    , [className    =? c            --> doShift  "5:media"  |   c   <- myMedia  ] -- move media to media
+    , [className    =? c            --> doShift  "3:web"    |   c   <- myWeb    ] -- move web to main
+    , [className    =? c            --> doShift  "4:mail"   |   c   <- myMail   ] -- move mail to main
+    , [className    =? c            --> doShift	 "5:chat"   |   c   <- myChat   ] -- move chat to chat
+    , [className    =? c            --> doShift  "6:media"  |   c   <- myMedia  ] -- move media to media
     , [className    =? c            --> doCenterFloat       |   c   <- myFloats ] -- float my floats
     , [name         =? n            --> doCenterFloat       |   n   <- myNames  ] -- float my names
 --    , [role         =? n            --> doCenterFloat       |   n   <- myFloatRoles  ] -- float my roles
