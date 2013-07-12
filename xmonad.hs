@@ -196,9 +196,9 @@ myDoFullFloat = doF W.focusDown <+> doFullFloat
 
 --myRooms = ["devops","offtopic","s2s","wsx"]
 
-floatLayout  = simpleFloat' shrinkText theme
-tabbedLayout = tabbed shrinkText theme
-mosaicLayout = MosaicAlt M.empty
+--floatLayout  = named "Float" $ simpleFloat' shrinkText theme
+tabbedLayout = named "Tabbed" $ tabbed shrinkText theme
+mosaicLayout = named "Mosaic" $ MosaicAlt M.empty
 --imLayout     = withIM (1%5) (And (ClassName "Pidgin") (Role "buddy_list")) $
 --               withIM (0.5) (And (ClassName "Pidgin") (And (Role "conversation") (Title "Oliver Carter"))) $
 --               Grid
@@ -210,7 +210,7 @@ chatsLayout = combineTwoP (TwoPane 0.03 0.5) individualChatsLayout groupChatsLay
 
 imLayout = named "IM" $
     combineTwoP (TwoPane 0.03 0.2) rosterLayout mainLayout isRoster
-    where rosterLayout    = smartBorders mosaicLayout
+    where rosterLayout    = mosaicLayout
           mainLayout      = chatsLayout
           isRoster        = pidginRoster `Or` skypeRoster
           pidginRoster    = And (ClassName "Pidgin") (Role "buddy_list")
@@ -219,10 +219,8 @@ imLayout = named "IM" $
           skypeLogin      = "fuzzipandabear"
 
 layoutHook' = 
-        named "Mosaic" (smartBorders mosaicLayout)
-    ||| named "Tabs" (smartBorders tabbedLayout)
-    ||| named "Float" (smartBorders floatLayout)
-    ||| named "IM" (smartBorders imLayout)
+        onWorkspaces ["5:chat"] imLayout $
+        mosaicLayout ||| tabbedLayout
 --}}}
 
 ----------------------------
