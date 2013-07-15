@@ -69,7 +69,7 @@ myWorkspaces = ["1:code","2:terminal","3:web","4:mail","5:chat","6:media"]
 -- Directories
 myHomeDir     = "/home/ricky/"
 myCabalBinDir = myHomeDir ++ ".cabal/bin/"
-myXInitDDir  = myHomeDir ++ "xinit.d/"
+myXInitDDir   = myHomeDir ++ "xinit.d/"
 
 -- Define commands
 shBackground = "/usr/bin/nitrogen --restore"    -- Set the background
@@ -246,10 +246,10 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,      xK_c        ), kill)
 
     -- Programs
-    , ((0,                          xK_Print    ), spawn "xmessage $(/usr/local/bin/ss-capture.sh full)")
-    , ((shiftMask,                  xK_Print    ), spawn "xmessage $(/usr/local/bin/ss-capture.sh partial)")
-    , ((modMask,                    xK_Print    ), spawn "/usr/local/bin/ss-gyazo-browser.sh full")
-    , ((modMask .|. shiftMask,      xK_Print    ), spawn "/usr/local/bin/ss-gyazo-browser.sh full")
+    , ((0,                          xK_Print    ), spawn "xmessage $(ss-capture.sh full)")
+    , ((shiftMask,                  xK_Print    ), spawn "xmessage $(ss-capture.sh partial)")
+    , ((modMask,                    xK_Print    ), spawn "ss-gyazo-browser.sh full")
+    , ((modMask .|. shiftMask,      xK_Print    ), spawn "ss-gyazo-browser.sh full")
     , ((modMask,		            xK_o        ), spawn "chrome")
     , ((modMask,                    xK_m        ), spawn "thunar")
 
