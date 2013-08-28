@@ -206,7 +206,7 @@ mosaicLayout = named "Mosaic" $ MosaicAlt M.empty
 chatsLayout = combineTwoP (TwoPane 0.03 0.5) individualChatsLayout groupChatsLayout isGroupChat
     where individualChatsLayout = tabbedLayout
           groupChatsLayout = tabbedLayout
-          isGroupChat = foldl1 Or $ map Title ["devops", "s2s", "qipps", "iss", "wsx"]
+          isGroupChat = foldl1 Or $ map Title ["devops", "s2s", "qipps", "iss", "wsx", "#zato"]
 
 imLayout = named "IM" $
     combineTwoP (TwoPane 0.03 0.2) rosterLayout mainLayout isRoster
