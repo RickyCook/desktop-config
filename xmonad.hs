@@ -199,9 +199,6 @@ myDoFullFloat = doF W.focusDown <+> doFullFloat
 --floatLayout  = named "Float" $ simpleFloat' shrinkText theme
 tabbedLayout = named "Tabbed" $ tabbed shrinkText theme
 mosaicLayout = named "Mosaic" $ MosaicAlt M.empty
---imLayout     = withIM (1%5) (And (ClassName "Pidgin") (Role "buddy_list")) $
---               withIM (0.5) (And (ClassName "Pidgin") (And (Role "conversation") (Title "Oliver Carter"))) $
---               Grid
 
 chatsLayout = combineTwoP (TwoPane 0.03 0.5) individualChatsLayout groupChatsLayout isGroupChat
     where individualChatsLayout = tabbedLayout
@@ -210,13 +207,11 @@ chatsLayout = combineTwoP (TwoPane 0.03 0.5) individualChatsLayout groupChatsLay
 
 imLayout = named "IM" $
     combineTwoP (TwoPane 0.03 0.2) rosterLayout mainLayout isRoster
-    where rosterLayout    = mosaicLayout
-          mainLayout      = chatsLayout
-          isRoster        = pidginRoster `Or` skypeRoster
-          pidginRoster    = And (ClassName "Pidgin") (Role "buddy_list")
-          -- TODO: distinguish Skype's main window better
-          skypeRoster     = Title $ skypeLogin ++ " - Skype™"
-          skypeLogin      = "fuzzipandabear"
+    where rosterLayout = mosaicLayout
+          mainLayout   = chatsLayout
+          isRoster     = pidginRoster `Or` skypeRoster
+          pidginRoster = ClassName "Pidgin" `And` Role "buddy_list"
+          skypeRoster  = ClassName "skype" `And` Not(Role "ConversationsWindow")
 
 layoutHook' = 
         onWorkspaces ["5:chat"] imLayout $
