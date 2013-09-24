@@ -203,7 +203,8 @@ mosaicLayout = named "Mosaic" $ MosaicAlt M.empty
 chatsLayout = combineTwoP (TwoPane 0.03 0.5) individualChatsLayout groupChatsLayout isGroupChat
     where individualChatsLayout = tabbedLayout
           groupChatsLayout = tabbedLayout
-          isGroupChat = foldl1 Or $ map Title [
+          isGroupChat = foldl1 Or $ map Title myRooms
+          myRooms     = [
                             "devops", "s2s", "qipps", "iss", "wsx",
                             "#zato", "#docker"
                         ]
@@ -244,10 +245,10 @@ keys' conf@(XConfig {XMonad.modMask = modMask}) = M.fromList $
     , ((modMask .|. shiftMask,      xK_c        ), kill)
 
     -- Programs
-    , ((0,                          xK_Print    ), spawn "xmessage $(ss-capture.sh full)")
-    , ((shiftMask,                  xK_Print    ), spawn "xmessage $(ss-capture.sh partial)")
+    , ((0,                          xK_Print    ), spawn "xmessage \"$(ss-capture.sh full)\"")
+    , ((shiftMask,                  xK_Print    ), spawn "xmessage \"$(ss-capture.sh partial)\"")
     , ((modMask,                    xK_Print    ), spawn "ss-gyazo-browser.sh full")
-    , ((modMask .|. shiftMask,      xK_Print    ), spawn "ss-gyazo-browser.sh full")
+    , ((modMask .|. shiftMask,      xK_Print    ), spawn "ss-gyazo-browser.sh partial")
     , ((modMask,		            xK_o        ), spawn "chrome")
     , ((modMask,                    xK_m        ), spawn "thunar")
 
