@@ -160,7 +160,7 @@ manageHook' = (composeAll . concat $
         myCode    = ["Sublime Text 2"]
         myWeb     = ["Firefox","Google-chrome","Chromium", "Chromium-browser"]
         myMail	  = ["Icedove"]
-        myChat	  = ["Pidgin","Buddy List"]
+        myChat	  = ["Pidgin","Skype"]
         myMedia	  = ["Rhythmbox","Spotify","Totem"]
 
         -- resources
