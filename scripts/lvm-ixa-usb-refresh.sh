@@ -1,2 +1,3 @@
 #!/bin/bash
-lvm-refresh-removable.sh ixa-usb storage
+dir=$(dirname "$0")
+$dir/lvm-refresh-removable.sh ixa-usb storage
