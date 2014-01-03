@@ -49,7 +49,9 @@ function do_link_all {
 	done
 }
 
-do_link "$DIR/.profile" "$HOME/.profile"
+do_link "$DIR/configs/.profile" "$HOME/.profile"
+do_link "$DIR/configs/wireshark/preferences" "$HOME/.wireshark/preferences"
+
 do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
 do_link "$DIR/tianbar" "$HOME/.config/tianbar"
 do_link_all "$DIR/scripts" "$HOME/bin"
