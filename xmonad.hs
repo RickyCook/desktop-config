@@ -205,7 +205,7 @@ chatsLayout = combineTwoP (TwoPane 0.03 0.5) individualChatsLayout groupChatsLay
           groupChatsLayout = tabbedLayout
           isGroupChat = foldl1 Or $ map Title myRooms
           myRooms     = [
-                            "devops", "s2s", "qipps", "iss", "wsx",
+                            "devops", "docker", "s2s", "qipps", "iss", "wsx",
                             "#zato", "#docker"
                         ]
 
