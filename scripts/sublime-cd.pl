@@ -4,7 +4,7 @@ use warnings;
 
 use File::Basename;
 
-my $xwininfo = 'xwininfo -root -children|grep -Po \'".+?Sublime Text"\'|grep -o \'[^"].*[^"]\'';
+my $xwininfo = "xwininfo -root -children|grep -Po '\\\".+?Sublime Text'|grep -o '[^\"].*'";
 open(
 	my $info,
 	"$xwininfo|"
