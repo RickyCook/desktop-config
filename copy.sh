@@ -57,5 +57,5 @@ do_link "$DIR/tianbar" "$HOME/.config/tianbar"
 do_link_all "$DIR/scripts" "$HOME/bin"
 do_link_all "$DIR/xinit.d" "$HOME/xinit.d"
 
-do_link "/opt/sublime_text/sublime_text" "$HOME/bin/sublime_text"
+do_link "/opt/sublime_text_3/sublime_text" "$HOME/bin/sublime_text"
 do_link "/opt/google/chrome/chrome" "$HOME/bin/chrome"
