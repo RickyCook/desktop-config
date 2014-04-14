@@ -1,25 +1,19 @@
 require.config({
   paths: {
-    "jquery": "../bower_components/jquery/jquery.min"
+    "jquery": "../bower_components/jquery/dist/jquery.min",
+    "moment": "../bower_components/moment/min/moment-with-langs.min",
+    "tianbar": "tianbar:///data/scripts"
   }
-});
+})
 require(
   [
     'jquery',
-    'widgets/time',
-    'widgets/weather',
-    'widgets/xmonad'
+    'tianbar/time',
+    'tianbar/xmonad'
   ],
-  function ($) {
+  function ($, time, xmonad) {
     $(document).ready(function () {
-      $.ajax('gsettings:org.gnome.desktop.background/picture-uri')
-      .success(function (background) {
-        $('body').css('background-image',
-          "url('" + background + "')");
-        $('body').css('background-size',
-          screen.width + "px " + screen.height + "px");
-      });
-      $('html').css('height', $(document).height());
-    });
+      $('html').css('height', $(document).height())
+    })
   }
-);
+)

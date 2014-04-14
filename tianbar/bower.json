@@ -1,7 +1,9 @@
 {
+  "name": "tianbar config",
   "dependencies": {
     "jquery": "*",
     "requirejs": "*",
-    "font-awesome": "*"
+    "font-awesome": "*",
+    "moment": "*"
   }
 }
