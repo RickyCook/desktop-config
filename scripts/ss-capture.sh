@@ -8,7 +8,7 @@ if [ "$1" == "full" ]; then
 	import_args="$import_args -window root"
 fi
 
-file="$HOME/images/ss-$(date +%F.%H-%M-%S).png"
+file="$HOME/Pictures/ss-$(date +%F.%H-%M-%S).png"
 import $import_args "$file"
 
 if [ $? -eq 0 ]; then
