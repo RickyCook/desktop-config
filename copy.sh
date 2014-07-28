@@ -59,3 +59,4 @@ do_link_all "$DIR/xinit.d" "$HOME/xinit.d"
 
 do_link "/opt/sublime_text_3/sublime_text" "$HOME/bin/sublime_text"
 do_link "/opt/google/chrome/chrome" "$HOME/bin/chrome"
+do_link "/opt/Telegram/Telegram" "$HOME/bin/telegram"
