@@ -159,7 +159,7 @@ manageHook' = (composeAll . concat $
         myFloats  = ["Smplayer","MPlayer","VirtualBox","Xmessage","XFontSel","Downloads","Nm-connection-editor"]
         myCode    = ["Sublime Text 2"]
         myWeb     = ["Firefox","Google-chrome","Chromium", "Chromium-browser"]
-        myMail	  = ["Icedove"]
+        myMail	  = ["Icedove","Evolution"]
         myChat	  = ["Pidgin","Skype"]
         myMedia	  = ["Rhythmbox","Spotify","Totem"]
 
