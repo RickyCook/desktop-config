@@ -57,7 +57,7 @@ import System.Tianbar.XMonadLog
 ----------------------------
 -- Config {{{
 -- Define Terminal
-myTerminal = "x-terminal-emulator"
+myTerminal = "gnome-terminal"
 
 -- Define modMask
 modMask' :: KeyMask
