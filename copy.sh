@@ -49,7 +49,13 @@ function do_link_all {
 	done
 }
 
+if [ ! -e  "$HOME/.vim/bundle/Vundle.vim" ]; then
+	mkdir -p "$HOME/.vim/bundle"
+	git clone https://github.com/gmarik/Vundle.vim.git "$HOME/.vim/bundle/Vundle.vim"
+fi
+
 do_link "$DIR/configs/.profile" "$HOME/.profile"
+do_link "$DIR/configs/.vimrc" "$HOME/.vimrc"
 do_link "$DIR/configs/wireshark/preferences" "$HOME/.wireshark/preferences"
 
 do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
