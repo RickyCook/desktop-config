@@ -56,6 +56,7 @@ fi
 
 do_link "$DIR/configs/.profile" "$HOME/.profile"
 do_link "$DIR/configs/.vimrc" "$HOME/.vimrc"
+do_link "$DIR/configs/.zshrc" "$HOME/.zshrc"
 do_link "$DIR/configs/wireshark/preferences" "$HOME/.wireshark/preferences"
 
 do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
