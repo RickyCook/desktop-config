@@ -57,13 +57,18 @@ fi
 do_link "$DIR/configs/.profile" "$HOME/.profile"
 do_link "$DIR/configs/.vimrc" "$HOME/.vimrc"
 do_link "$DIR/configs/.zshrc" "$HOME/.zshrc"
-do_link "$DIR/configs/wireshark/preferences" "$HOME/.wireshark/preferences"
 
-do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
-do_link "$DIR/tianbar" "$HOME/.config/tianbar"
-do_link_all "$DIR/scripts" "$HOME/bin"
-do_link_all "$DIR/xinit.d" "$HOME/xinit.d"
+if [ -e "$HOME/.wireshark" ]; then
+	do_link "$DIR/configs/wireshark/preferences" "$HOME/.wireshark/preferences"
+fi
 
-do_link "/opt/sublime_text_3/sublime_text" "$HOME/bin/sublime_text"
-do_link "/opt/google/chrome/chrome" "$HOME/bin/chrome"
-do_link "/opt/Telegram/Telegram" "$HOME/bin/telegram"
+if [ ! $(uname) = 'Darwin' ]; then
+	do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
+	do_link "$DIR/tianbar" "$HOME/.config/tianbar"
+	do_link_all "$DIR/scripts" "$HOME/bin"
+	do_link_all "$DIR/xinit.d" "$HOME/xinit.d"
+
+	do_link "/opt/sublime_text_3/sublime_text" "$HOME/bin/sublime_text"
+	do_link "/opt/google/chrome/chrome" "$HOME/bin/chrome"
+	do_link "/opt/Telegram/Telegram" "$HOME/bin/telegram"
+fi
