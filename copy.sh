@@ -63,7 +63,18 @@ if [ -e "$HOME/.wireshark" ]; then
 	do_link "$DIR/configs/wireshark/preferences" "$HOME/.wireshark/preferences"
 fi
 
-if [ ! $(uname) = 'Darwin' ]; then
+if [ $(uname) = 'Darwin' ]; then
+	MY_PYTHON="$(which python3.4)"
+	MY_VIRTUALENVWRAPPER="$(dirname $MY_PYTHON)/virtualenvwrapper.sh"
+	[ -e "$MY_PYTHON" ] && (
+		do_link "$MY_PYTHON" "$HOME/bin/python"
+		echo "Python now $MY_PYTHON"
+	)
+	[ -e "$MY_VIRTUALENVWRAPPER" ] && (
+		do_link "$MY_VIRTUALENVWRAPPER" "$HOME/bin/virtualenvwrapper.sh"
+		echo "VirtualEnvWrapper now $MY_VIRTUALENVWRAPPER"
+	)
+else
 	do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
 	do_link "$DIR/tianbar" "$HOME/.config/tianbar"
 	do_link_all "$DIR/xinit.d" "$HOME/xinit.d"

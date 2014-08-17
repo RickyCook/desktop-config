@@ -67,7 +67,15 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
 
-source /usr/local/bin/virtualenvwrapper.sh
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.3/bin/
-export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
+
+if [ $(uname) = 'Darwin' ]; then
+	export PATH=/Library/Frameworks/Python.framework/Versions/3.4/bin/:$PATH
+	export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
+
+	export VIRTUALENVWRAPPER_PYTHON=$(which python3.4)
+	source "$HOME/bin/virtualenvwrapper.sh"
+else
+	source /usr/local/bin/virtualenvwrapper.sh
+fi
+
 export PATH=$HOME/bin/:$PATH
