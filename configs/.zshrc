@@ -70,3 +70,4 @@ export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 source /usr/local/bin/virtualenvwrapper.sh
 export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.3/bin/
 export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
+export PATH=$HOME/bin/:$PATH
