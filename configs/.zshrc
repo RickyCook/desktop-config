@@ -79,3 +79,6 @@ else
 fi
 
 export PATH=$HOME/bin/:$PATH
+
+alias sshu="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+alias scpu="scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
