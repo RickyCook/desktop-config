@@ -18,6 +18,7 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'godlygeek/tabular'
 
+Plugin 'https://github.com/tfnico/vim-gradle.git'
 Plugin 'pangloss/vim-javascript'
 
 " All of your Plugins must be added before the following line
@@ -34,3 +35,4 @@ if exists('+colorcolumn')
 endif
 
 au FileType javascript setlocal tabstop=2 expandtab
+au FileType groovy setlocal tabstop=4 expandtab
