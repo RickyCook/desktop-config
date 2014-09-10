@@ -80,5 +80,9 @@ fi
 
 export PATH=$HOME/bin/:$PATH
 
+if [ -s $HOME/.rvm/scripts/rvm ]; then
+	source $HOME/.rvm/scripts/rvm
+fi
+
 alias sshu="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias scpu="scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
