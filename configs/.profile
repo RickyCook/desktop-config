@@ -37,4 +37,4 @@ if [ -d "$HOME/.cabal/bin" ] ; then
 fi
 
 export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
-source /home/ricky/.rvm/scripts/rvm
+source $HOME/.rvm/scripts/rvm
