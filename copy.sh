@@ -74,6 +74,9 @@ if [ $(uname) = 'Darwin' ]; then
 		do_link "$MY_VIRTUALENVWRAPPER" "$HOME/bin/virtualenvwrapper.sh"
 		echo "VirtualEnvWrapper now $MY_VIRTUALENVWRAPPER"
 	)
+
+	mkdir -p "$HOME/Library/KeyBindings"
+	do_link "$DIR/configs/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
 else
 	do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
 	do_link "$DIR/tianbar" "$HOME/.config/tianbar"
