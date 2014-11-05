@@ -74,6 +74,8 @@ if [ $(uname) = 'Darwin' ]; then
 
 	export VIRTUALENVWRAPPER_PYTHON=$(which python3.4)
 	source "$HOME/bin/virtualenvwrapper.sh"
+
+	export DOCKER_HOST=tcp://debian.local:2375
 else
 	source /usr/local/bin/virtualenvwrapper.sh
 fi
