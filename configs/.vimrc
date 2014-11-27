@@ -34,5 +34,7 @@ if exists('+colorcolumn')
 	set colorcolumn=80
 endif
 
+au FileType html setlocal tabstop=2 expandtab
 au FileType javascript setlocal tabstop=2 expandtab
 au FileType groovy setlocal tabstop=4 expandtab
+au FileType python setlocal tabstop=4 expandtab
