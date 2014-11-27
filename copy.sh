@@ -57,6 +57,7 @@ fi
 do_link "$DIR/configs/.profile" "$HOME/.profile"
 do_link "$DIR/configs/.vimrc" "$HOME/.vimrc"
 do_link "$DIR/configs/.zshrc" "$HOME/.zshrc"
+do_link "$DIR/configs/kphoen-thatpanda.zsh-theme" "$HOME/.oh-my-zsh/custom/themes/kphoen-thatpanda.zsh-theme"
 do_link_all "$DIR/scripts" "$HOME/bin"
 
 if [ -e "$HOME/.wireshark" ]; then

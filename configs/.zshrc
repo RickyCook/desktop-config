@@ -1,11 +1,14 @@
 # Path to your oh-my-zsh installation.
-ZSH=$HOME/.oh-my-zsh
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="mh"
+ZSH_THEME="kphoen-thatpanda"
+
+# Uncomment the following line to display red dots whilst waiting for completion.
+COMPLETION_WAITING_DOTS="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
@@ -18,30 +21,25 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 
-# # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='mvim'
-# fi
+function try_source {
+	[ -f "$1" ] && source "$1"
+}
 
 if [ $(uname) = 'Darwin' ]; then
 	export PATH=/Library/Frameworks/Python.framework/Versions/3.4/bin/:$PATH
 	export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
 
 	export VIRTUALENVWRAPPER_PYTHON=$(which python3.4)
-	source "$HOME/bin/virtualenvwrapper.sh"
-
 	export DOCKER_HOST=tcp://debian.local:2375
+
+	try_source "$HOME/bin/virtualenvwrapper.sh"
 else
-	source /usr/local/bin/virtualenvwrapper.sh
+	try_source /usr/local/bin/virtualenvwrapper.sh
 fi
 
 export PATH=$HOME/bin/:$PATH
 
-if [ -s $HOME/.rvm/scripts/rvm ]; then
-	source $HOME/.rvm/scripts/rvm
-fi
+try_source "$HOME/.travis/travis.sh"
 
 alias sshu="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias scpu="scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
