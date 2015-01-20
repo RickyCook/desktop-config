@@ -26,6 +26,7 @@ function do_link {
 
 	file=$(basename "$2")
 	dir=$(dirname "$2")
+	mkdir -p "$dir"
 	(cd "$dir"; ln -s "$1" "./$file")
 	if [ $? -ne 0 ]; then
 		echo "Could not link $0 -> $2" >&2
