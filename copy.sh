@@ -79,6 +79,9 @@ if [ $(uname) = 'Darwin' ]; then
 
 	mkdir -p "$HOME/Library/KeyBindings"
 	do_link "$DIR/configs/DefaultKeyBinding.dict" "$HOME/Library/KeyBindings/DefaultKeyBinding.dict"
+
+	[[ -e "$HOME/Downloads/Espresso Libre.itermcolors" ]] || \
+		curl -o "$HOME/Downloads/Espresso Libre.itermcolors"  https://raw.githubusercontent.com/mbadolato/iTerm2-Color-Schemes/master/schemes/Espresso%20Libre.itermcolors
 else
 	do_link "$DIR/xmonad.hs" "$HOME/.xmonad/xmonad.hs"
 	do_link "$DIR/tianbar" "$HOME/.config/tianbar"
