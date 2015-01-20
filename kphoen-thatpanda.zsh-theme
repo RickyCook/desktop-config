@@ -1,0 +1,1 @@
+/Users/rickycook/Documents/code/desktop-config/configs/kphoen-thatpanda.zsh-theme
