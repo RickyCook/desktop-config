@@ -2,6 +2,7 @@
 DIR=$(cd $(dirname "$0"); pwd -L)
 
 mkdir -p "$HOME/.config/tianbar"
+mkdir -p "$HOME/.go"
 mkdir -p "$HOME/.xmonad"
 
 function do_link {

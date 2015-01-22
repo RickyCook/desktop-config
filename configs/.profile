@@ -40,4 +40,7 @@ if [ -d "$HOME/.rvm/bin" ] ; then
     PATH="$HOME/.rvm/bin:$PATH"
 fi
 
+#set GOPATH
+export GOPATH="$HOME/.go"
+
 source $HOME/.rvm/scripts/rvm
