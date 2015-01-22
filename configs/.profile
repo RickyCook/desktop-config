@@ -35,6 +35,9 @@ fi
 if [ -d "$HOME/.cabal/bin" ] ; then
     PATH="$HOME/.cabal/bin:$PATH"
 fi
+# set PATH so it includes user's RVM if it exists
+if [ -d "$HOME/.rvm/bin" ] ; then
+    PATH="$HOME/.rvm/bin:$PATH"
+fi
 
-export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 source $HOME/.rvm/scripts/rvm
