@@ -21,6 +21,10 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 
+if [ -e "$HOME/.profile" ]; then
+	source "$HOME/.profile"
+fi
+
 function try_source {
 	[ -f "$1" ] && source "$1"
 }
@@ -36,8 +40,6 @@ if [ $(uname) = 'Darwin' ]; then
 else
 	try_source /usr/local/bin/virtualenvwrapper.sh
 fi
-
-export PATH=$HOME/bin/:$PATH
 
 try_source "$HOME/.travis/travis.sh"
 
