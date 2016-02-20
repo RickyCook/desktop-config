@@ -5,3 +5,5 @@
 	default = simple
 [color]
 	ui = auto
+[help]
+	autocorrect = 5
