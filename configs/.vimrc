@@ -11,6 +11,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'scrooloose/nerdtree'
 Plug 'airblade/vim-gitgutter'
 Plug 'vim-airline/vim-airline'
+Plug 'plasticboy/vim-markdown'
 
 call plug#end()
 
@@ -144,3 +145,4 @@ endfunction
 noremap <leader>p :Files<CR>
 noremap <leader>c :Commands<CR>
 
+let g:vim_markdown_folding_disabled = 1
