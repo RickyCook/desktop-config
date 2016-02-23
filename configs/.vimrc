@@ -118,6 +118,10 @@ endif
 " Always show the status line
 set laststatus=2
 
+" Margin
+let &colorcolumn=join(range(80,999),",")
+highlight ColorColumn ctermbg=235
+
 """
 " Custom commands
 "
