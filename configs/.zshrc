@@ -45,6 +45,7 @@ try_source "$HOME/.travis/travis.sh"
 try_source "$HOME/.fzf.zsh"
 try_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 try_source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+try_source /opt/boxen/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 alias sshu="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias scpu="scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
