@@ -14,6 +14,7 @@ Plug 'vim-airline/vim-airline'
 Plug 'plasticboy/vim-markdown'
 Plug 'pangloss/vim-javascript'
 Plug 'mxw/vim-jsx'
+Plug 'pearofducks/ansible-vim'
 
 call plug#end()
 
