@@ -1,0 +1,9 @@
+[user]
+	email = ricky@spruce.sh
+	name = Ricky Cook
+[push]
+	default = simple
+[color]
+	ui = auto
+[help]
+	autocorrect = 5

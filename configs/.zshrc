@@ -19,7 +19,7 @@ source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
-export PATH="/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
+export PATH="node_modules/.bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/bin:/usr/local/sbin"
 
 if [ -e "$HOME/.profile" ]; then
 	source "$HOME/.profile"
@@ -41,12 +41,21 @@ else
 fi
 
 try_source "$HOME/.travis/travis.sh"
+try_source "$HOME/.fzf.zsh"
+try_source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+try_source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+try_source /opt/boxen/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+try_source ~/google-cloud-sdk/path.zsh.inc
+try_source ~/google-cloud-sdk/completion.zsh.inc
+
+if [ -e "/opt/boxen/homebrew/Cellar/zsh-completions" ]; then
+    source /opt/boxen/homebrew/Cellar/zsh-completions/0.12.0/share/zsh-completions/*
+fi
 
 alias sshu="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias scpu="scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+alias gdone='GDONEWITH=$(git rev-parse --abbrev-ref HEAD); git checkout master && git pull && git branch -d $GDONEWITH'
 
-# The next line updates PATH for the Google Cloud SDK.
-source '/Users/rickycook/google-cloud-sdk/path.zsh.inc'
+export EDITOR="$(which vim)"
 
-# The next line enables shell command completion for gcloud.
-source '/Users/rickycook/google-cloud-sdk/completion.zsh.inc'
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
