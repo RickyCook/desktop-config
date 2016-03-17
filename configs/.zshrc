@@ -34,7 +34,6 @@ if [ $(uname) = 'Darwin' ]; then
 	export PATH=$PATH:/Applications/Postgres.app/Contents/Versions/9.3/bin/
 
 	export VIRTUALENVWRAPPER_PYTHON=$(which python3.4)
-	export DOCKER_HOST=tcp://debian.local:2375
 
 	try_source "$HOME/bin/virtualenvwrapper.sh"
 else
@@ -45,3 +44,9 @@ try_source "$HOME/.travis/travis.sh"
 
 alias sshu="ssh -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
 alias scpu="scp -o UserKnownHostsFile=/dev/null -o StrictHostKeyChecking=no"
+
+# The next line updates PATH for the Google Cloud SDK.
+source '/Users/rickycook/google-cloud-sdk/path.zsh.inc'
+
+# The next line enables shell command completion for gcloud.
+source '/Users/rickycook/google-cloud-sdk/completion.zsh.inc'

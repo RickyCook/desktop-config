@@ -44,3 +44,5 @@ fi
 export GOPATH="$HOME/.go"
 
 source $HOME/.rvm/scripts/rvm
+
+CLOUDSDK_PYTHON="$(which python2.7)"
