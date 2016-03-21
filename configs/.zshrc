@@ -48,6 +48,8 @@ try_source /opt/boxen/homebrew/share/zsh-syntax-highlighting/zsh-syntax-highligh
 try_source ~/google-cloud-sdk/path.zsh.inc
 try_source ~/google-cloud-sdk/completion.zsh.inc
 
+which pyenv > /dev/null && eval "$(pyenv init -)"
+
 if [ -e "/opt/boxen/homebrew/Cellar/zsh-completions" ]; then
     source /opt/boxen/homebrew/Cellar/zsh-completions/0.12.0/share/zsh-completions/*
 fi
